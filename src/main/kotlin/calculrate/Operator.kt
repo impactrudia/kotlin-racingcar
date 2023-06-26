@@ -1,6 +1,6 @@
 package calculrate
 
-enum class Operator(val char: String) {
+enum class Operator(val symbol: String) {
     PLUS("+") {
         override fun operation(first: Int, second: Int): Int = first + second
     },
@@ -18,7 +18,7 @@ enum class Operator(val char: String) {
 
     companion object {
         fun of(symbol: String): Operator {
-            val operator = values().firstOrNull { it.char == symbol }
+            val operator = values().firstOrNull { it.symbol == symbol }
             require(operator != null) {
                 "사칙연산 기호가 아닌 경우"
             }
